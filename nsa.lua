@@ -100,18 +100,18 @@ if makefolder and isfolder and not isfolder("Astral") then
     makefolder("Astral/Data")
 end
 
-if readfile and isfile and isfile("Astral/Configs/NoScopeArcade_Config.ROGUEHUB") then
-    getgenv().settings = game:GetService("HttpService"):JSONDecode(readfile("Astral/Configs/NoScopeArcade_Config.ROGUEHUB"))
+if readfile and isfile and isfile("Astral/Configs/NoScopeArcade_Config.ASTRAL") then
+    getgenv().settings = game:GetService("HttpService"):JSONDecode(readfile("Astral/Configs/NoScopeArcade_Config.ASTRAL"))
 end
 
 local function saveSettings()
     if writefile then
-        writefile("Astral/Configs/NoScopeArcade_Config.ROGUEHUB", game:GetService("HttpService"):JSONEncode(getgenv().settings))
+        writefile("Astral/Configs/NoScopeArcade_Config.ASTRAL", game:GetService("HttpService"):JSONEncode(getgenv().settings))
     end
 end
 
 function getQuote()
-    local userQuotes = game:GetService("HttpService"):JSONDecode(readfile("/Astral/Configs/Quotes.ROGUEHUB"))
+    local userQuotes = game:GetService("HttpService"):JSONDecode(readfile("/Astral/Configs/Quotes.ASTRAL"))
     return userQuotes[math.random(#userQuotes)]
 end
 
@@ -125,7 +125,7 @@ local function getGun(player)
     end
 end
 
--- NO MIKEY ALLOWED THAT RETARDS A FUCKING SKID (also if you see this then cool you found the second easter egg)
+-- NO ONE ALLOWED FUCKING SKID (also if you see this then cool cause you found an easter egg)
 
 local function esp(object, text, color)
     local espText = Drawing.new("Text")
@@ -563,12 +563,12 @@ local infoSec = infoTab:CreateSection("Credits")
 
 local req = http_request or request or syn.request
 
-infoSec:CreateButton("Creator: cyrin#0250", function()
-    setclipboard("cyrin#0250")
+infoSec:CreateButton("Creator: april#8795", function()
+    setclipboard("april#8795")
     
     game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = "Astral / Note",
-        Text = "Copied Cyrin's discord username and tag to your clipboard.",
+        Text = "Copied april's discord username and tag to your clipboard.",
         Duration = 5
     })
 end)
@@ -597,7 +597,7 @@ infoSec:CreateButton("Join the chads.", function()
             Body = game:GetService("HttpService"):JSONEncode(
             {
                 ["args"] = {
-                ["code"] = "VdrHU8KP7c",
+                ["code"] = "GxSh5K6jDn",
                 },
                         
                 ["cmd"] = "INVITE_BROWSER",
@@ -605,7 +605,7 @@ infoSec:CreateButton("Join the chads.", function()
             })
         })
     else
-        setclipboard("https://discord.gg/VdrHU8KP7c")
+        setclipboard("https://discord.gg/GxSh5K6jDn")
     
         game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = "Astral / Note",
@@ -698,7 +698,7 @@ end
 task.wait(5)
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "Please Note",
-    Text = "The Astral version you are using is currently in alpha, bugs may occur.",
+    Title = "Astral / Note",
+    Text = "The version you are using is currently in alpha, bugs may occur.",
     Duration = 10
 })
